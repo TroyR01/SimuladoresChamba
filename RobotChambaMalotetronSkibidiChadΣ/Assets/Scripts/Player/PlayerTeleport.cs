@@ -4,46 +4,35 @@ using UnityEngine;
 
 public class PlayerTeleport : MonoBehaviour
 {
-
-    private GameObject currentTeleporter;
+    public GameObject currentTeleporter;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if(currentTeleporter!=null)
+            if (currentTeleporter != null)
             {
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
+
+                currentTeleporter = currentTeleporter.GetComponent<Teleporter>().GetDestination().gameObject;
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Teleporter"))
+        if (collision.CompareTag("Teleporter"))
         {
-            currentTeleporter=collision.gameObject;
+            currentTeleporter = collision.gameObject;  // Asignamos el teletransportador actual
         }
-        
-        
-       
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-         if(collision.CompareTag("Teleporter"))
+        if (collision.CompareTag("Teleporter"))
         {
-            currentTeleporter=null;
+            currentTeleporter = null;  // Limpiamos el teletransportador cuando el jugador sale
         }
-        
-      
     }
-
-    /*// Start is called before the first frame update
-        void Start()
-        {
-            
-        }
-
-        */
 }
