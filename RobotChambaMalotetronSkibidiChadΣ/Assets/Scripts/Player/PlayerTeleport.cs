@@ -25,6 +25,9 @@ public class PlayerTeleport : MonoBehaviour
         {
             currentTeleporter=collision.gameObject;
         }
+        
+        
+       
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -33,6 +36,7 @@ public class PlayerTeleport : MonoBehaviour
             currentTeleporter=null;
         }
         
+      
     }
 
     /*// Start is called before the first frame update
