@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps; 
+using UnityEngine.SceneManagement;
 
 public class Horizontal_Move : MonoBehaviour
 {
+     public TransitionManager transitionManager;
     [SerializeField] private Tilemap tilemap;  // Referencia al Tilemap
     [SerializeField] private Tile oldTile;
     [SerializeField] private Tile newTile;  // El nuevo tile con el estilo que quieres
@@ -32,7 +34,6 @@ public class Horizontal_Move : MonoBehaviour
     {
         movementX = Input.GetAxisRaw("Horizontal") * movementVelocity;
         Move(movementX * Time.fixedDeltaTime);
-
     }
     private void FixedUpdate()
     {
@@ -57,6 +58,12 @@ public class Horizontal_Move : MonoBehaviour
             tilemap.SetTile(coordinates[counter-1],oldTile);
             counter--;
             // Aquí puedes manejar lo que ocurre al interactuar con un enemigo
+        }
+        if(counter == 20)
+        {
+            
+            transitionManager.Transition("LevelIntroduction");
+            
         }
     }
     private void Move(float movement)
