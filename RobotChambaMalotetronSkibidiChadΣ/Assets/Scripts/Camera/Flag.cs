@@ -11,7 +11,7 @@ public class Flag : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            cameraMovementScript.moveCamera(true);  
+            cameraMovementScript.MoveCamera(true);  
             
             
         }
