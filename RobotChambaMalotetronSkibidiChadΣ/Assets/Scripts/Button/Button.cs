@@ -5,6 +5,7 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public GameObject door;
+    public Animator animator;
 
     // Asegúrate de que el objeto del botón tiene un Collider2D con la opción "Is Trigger" marcada
 
@@ -14,7 +15,9 @@ public class Button : MonoBehaviour
         
         if(collision.CompareTag("Player"))
         {
-            door.SetActive(false); 
+            animator.SetBool("Open",true);
+            door.GetComponent<Animator>().SetTrigger("Open");
+            door.GetComponent<BoxCollider2D>().enabled=false; 
            
         }
     }
