@@ -32,14 +32,14 @@ public class GrabObjects : MonoBehaviour
         if (hitInfo.collider!=null && hitInfo.collider.gameObject.layer == layerIndex)
         {
             //Agarrar objeto
-            if (Input.GetKeyDown(KeyCode.R) && grabbedObject == null)
+            if (Input.GetKeyDown(KeyCode.E) && grabbedObject == null)
             {
                 grabbedObject = hitInfo.collider.gameObject;
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 grabbedObject.transform.position = grabPoint.position;
                 grabbedObject.transform.SetParent(transform);
             }
-            else if (Input.GetKeyDown(KeyCode.R))
+            else if (Input.GetKeyDown(KeyCode.E))
             {
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.transform.SetParent(null);

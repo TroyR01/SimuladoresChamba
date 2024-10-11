@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,7 +16,9 @@ public class Hoyo : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Cable"))
+        if((collision.CompareTag("Amarillo") && this.CompareTag("Amarillo")) || 
+            (collision.CompareTag("White") && this.CompareTag("White")) || 
+            (collision.CompareTag("Blue") && this.CompareTag("Blue")))
         {
             Boton = collision.gameObject;
 
@@ -37,9 +40,12 @@ public class Hoyo : MonoBehaviour
 
             this.GetComponent<BoxCollider2D>().enabled = false;
 
-            //animator.SetBool("Open",true);
-            door.GetComponent<Animator>().SetTrigger("Open");
-            door.GetComponent<BoxCollider2D>().enabled=false; 
+            if(this.CompareTag("Amarillo"))
+            {
+                //animator.SetBool("Open",true);
+                door.GetComponent<Animator>().SetTrigger("Open");
+                door.GetComponent<BoxCollider2D>().enabled=false; 
+            }
         }
     }
 }

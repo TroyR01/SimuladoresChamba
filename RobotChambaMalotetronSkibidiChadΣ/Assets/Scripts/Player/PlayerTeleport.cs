@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerTeleport : MonoBehaviour
 {
     public GameObject currentTeleporter;
+     public GameObject canva;
 
     // Update is called once per frame
     void Update()
@@ -13,6 +14,7 @@ public class PlayerTeleport : MonoBehaviour
         {
             if (currentTeleporter != null)
             {
+                canva.SetActive(false); 
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
                 currentTeleporter.GetComponent<AudioSource>().Play();
 
