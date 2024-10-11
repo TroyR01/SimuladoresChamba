@@ -15,7 +15,8 @@ public class Horizontal_Move : MonoBehaviour
     private Rigidbody2D rb2d;
    // public RailCamera railCamera; // Referencia al script de la cámara
 
-
+    public Shake_Camera mainCamera;
+    public Animator animator;
     [Header("Horizontal Movement")]
     private float movementX = 0;
     [SerializeField] private float movementVelocity;
@@ -52,11 +53,16 @@ public class Horizontal_Move : MonoBehaviour
             counter++;
             // Aquí puedes manejar lo que ocurre al interactuar con un enemigo
         }
-        if (other.gameObject.CompareTag("Bad")&&counter>0)
+        if (other.gameObject.CompareTag("Bad"))
         {
-            Debug.Log("Entró en trigger con un ruido");
-            tilemap.SetTile(coordinates[counter-1],oldTile);
-            counter--;
+            animator.SetTrigger("Damage");
+            mainCamera.TriggerShake(0.2f, 0.2f);
+            if(counter>0)
+            {
+                Debug.Log("Entró en trigger con un ruido");
+                tilemap.SetTile(coordinates[counter-1],oldTile);
+                counter--;
+            }
             // Aquí puedes manejar lo que ocurre al interactuar con un enemigo
         }
         if(counter == 20)
