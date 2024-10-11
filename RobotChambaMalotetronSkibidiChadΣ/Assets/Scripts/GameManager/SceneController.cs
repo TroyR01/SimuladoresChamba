@@ -1,23 +1,28 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     [SerializeField] Animator transitionAnim;
 
-    public void NextLevel()
+    // Método para cambiar a la siguiente escena usando el nombre
+    public void NextLevel(string sceneName)
     {
-        StartCoroutine(LoadLevel());
+        StartCoroutine(LoadLevel(sceneName));
     }
-    IEnumerator LoadLevel()
+
+
+    IEnumerator LoadLevel(string sceneName)
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
-        transitionAnim.SetTrigger("Start");
 
+        SceneManager.LoadSceneAsync(sceneName);
+
+        transitionAnim.SetTrigger("Start");
     }
-  
 }
