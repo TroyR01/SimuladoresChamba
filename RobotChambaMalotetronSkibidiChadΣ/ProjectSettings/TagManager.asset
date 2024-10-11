@@ -9,10 +9,10 @@ TagManager:
   - Good
   - Bad
   - Button
-  - Cable
   - Amarillo
   - White
   - Blue
+  - Ordenado
   layers:
   - Default
   - TransparentFX

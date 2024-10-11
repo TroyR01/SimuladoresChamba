@@ -31,6 +31,7 @@ public class Hoyo : MonoBehaviour
             int defaultLayer = LayerMask.NameToLayer("Default");
             Boton.layer = defaultLayer;
             Boton.GetComponent<Rigidbody2D>().excludeLayers = 1 << defaultLayer;
+            Boton.tag = "Ordenado";
             //Boton.GetComponent<Collider2D>().enabled = false;
             //Boton.GetComponent<BoxCollider2D>().enabled = false;
             //this.GetComponent<BoxCollider2D>().excludeLayers = 1 << defaultLayer;
