@@ -20,7 +20,7 @@ public class Button : MonoBehaviour
         {
             animator.SetBool("Open",true);
             door.GetComponent<Animator>().SetTrigger("Open");
-            door.GetComponent<BoxCollider2D>().enabled=false; 
+            door.GetComponent<BoxCollider2D>().enabled=false;
            
         }
     }

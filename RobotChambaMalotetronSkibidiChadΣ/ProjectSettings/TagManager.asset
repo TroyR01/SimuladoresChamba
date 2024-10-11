@@ -10,6 +10,9 @@ TagManager:
   - Bad
   - Button
   - Cable
+  - Amarillo
+  - White
+  - Blue
   layers:
   - Default
   - TransparentFX

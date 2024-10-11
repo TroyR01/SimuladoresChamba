@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flag : MonoBehaviour
+public class Flag_lv1 : MonoBehaviour
 {    
    
     public CameraMovement cameraMovementScript;  
