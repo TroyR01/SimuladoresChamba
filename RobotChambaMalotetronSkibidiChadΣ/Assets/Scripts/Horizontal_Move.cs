@@ -68,7 +68,7 @@ public class Horizontal_Move : MonoBehaviour
             }
             // Aquí puedes manejar lo que ocurre al interactuar con un enemigo
         }
-        if(counter == 5)
+        if(counter == 20)
         {
             
             transitionManager.Transition("Menu");
