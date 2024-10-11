@@ -10,7 +10,7 @@ public class FlagGoal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            sceneControllerScript.NextLevel();  
+            sceneControllerScript.NextLevel("Level3");  
             
             
         }
