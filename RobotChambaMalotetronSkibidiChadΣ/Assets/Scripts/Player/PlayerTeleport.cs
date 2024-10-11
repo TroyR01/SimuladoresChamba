@@ -14,6 +14,7 @@ public class PlayerTeleport : MonoBehaviour
             if (currentTeleporter != null)
             {
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
+                currentTeleporter.GetComponent<AudioSource>().Play();
 
                 currentTeleporter = currentTeleporter.GetComponent<Teleporter>().GetDestination().gameObject;
             }

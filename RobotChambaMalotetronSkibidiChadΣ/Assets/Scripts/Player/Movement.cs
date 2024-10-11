@@ -26,26 +26,30 @@ public class Movement : MonoBehaviour
 
     [Header("Animator")]
     [SerializeField] private Animator animator;
+    
+    private AudioSource jumpSound;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        jumpSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-
         input.y = Input.GetAxisRaw("Vertical");
         movementX = Input.GetAxisRaw("Horizontal") * movementVelocity;
         Move(movementX * Time.fixedDeltaTime);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            jumpSound.Play();
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
         }
 
         if (Input.GetButtonUp("Jump") && rb2d.velocity.y > 0)
         {
+            jumpSound.Play();
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * 0.5f);
         }
 

@@ -24,10 +24,12 @@ public class Horizontal_Move : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private bool lookRight = true;
     private Vector2 input;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
          rb2d = GetComponent<Rigidbody2D>();
+         audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,6 +61,7 @@ public class Horizontal_Move : MonoBehaviour
             mainCamera.TriggerShake(0.2f, 0.2f);
             if(counter>0)
             {
+                audioSource.Play();
                 Debug.Log("Entró en trigger con un ruido");
                 tilemap.SetTile(coordinates[counter-1],oldTile);
                 counter--;
