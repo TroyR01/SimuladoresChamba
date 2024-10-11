@@ -71,7 +71,7 @@ public class Horizontal_Move : MonoBehaviour
         if(counter == 20)
         {
             
-            transitionManager.Transition("Menu");
+            transitionManager.Transition("Credits");
             
         }
     }

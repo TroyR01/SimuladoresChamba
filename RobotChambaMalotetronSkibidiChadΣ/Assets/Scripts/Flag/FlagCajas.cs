@@ -12,7 +12,7 @@ public class FlagCajas : MonoBehaviour
         GameObject[] _Agarrables = GameObject.FindGameObjectsWithTag("Ordenado");
         if (_Agarrables.Count()>=3)
         {
-            sceneControllerScript.NextLevel("Level3");  
+            sceneControllerScript.NextLevel("Introduction");  
             
             
         }

@@ -6,14 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 1d8a424d11baae642ae69ac9268ed333
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 358921889fefd5642a6123462e7fa3e5
   - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: d47755fe997af0d4fb75c9b29fb3107c
+  - enabled: 1
     path: Assets/Scenes/LevelIntroduction.unity
     guid: 707c131b10762ee4da0481e8248c06ef
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Vuelta.unity
+    guid: 279e5d83bfe596549aa3834907e4a041
   - enabled: 1
     path: Assets/Scenes/LevelSampleTes.unity
     guid: 318315466b9077f4d80c65490d404541
@@ -21,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Presentation.unity
     guid: 1c722c6c3b7030849bfef59c2da49bc4
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 1d8a424d11baae642ae69ac9268ed333
+    path: Assets/Scenes/LevelCajas.unity
+    guid: 056fc828c9fe3ba9cacf3ebe253d0273
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Cyberspace.unity
+    guid: b8c71c5a54ffd2d4896a5b930f4b849d
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Introduction.unity
+    guid: 9470551ea7d53694f9a1611a2c203678
   m_configObjects: {}
