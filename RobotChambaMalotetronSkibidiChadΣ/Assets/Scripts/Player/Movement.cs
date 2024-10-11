@@ -113,14 +113,14 @@ public class Movement : MonoBehaviour
 
 
         //Emision de particulas, si se esta tocando el suelo y se esta moviendo, emitira particulas
-        if (movementX != 0 && isGrounded)
+        /*if (movementX != 0 && isGrounded)
         {
             footEmmision.rateOverTime = 20f;
         }
         else
         {
             footEmmision.rateOverTime = 0;
-        }
+        }*/
 
         //Emision de particulas a saltar, Si el frame anterior no se estaba en el suelo y posteriormente si, emitira particulas de polvo
         if (!wasOnGround && isGrounded)
@@ -136,16 +136,17 @@ public class Movement : MonoBehaviour
             // Temblor de la cámara al aterrizar
            // railCamera.TriggerShake(shakeMagnitude, 0.1f);
 
-            impactEffect.gameObject.SetActive(true);
+            /*impactEffect.gameObject.SetActive(true);
             impactEffect.Stop();
             impactEffect.transform.position = footsteps.transform.position;
-            impactEffect.Play();
+            impactEffect.Play();*/
         }
         wasOnGround = isGrounded;
 
 
         //Variables de animacion
-        animator.SetFloat("MoveX", Mathf.Abs(movementX));
+        Debug.Log(movementX);
+        animator.SetFloat("movementX", Mathf.Abs(movementX));
         animator.SetBool("onFloor", isGrounded);
 
         // animator.SetFloat("inputY", rb2d.velocity.y);
@@ -160,10 +161,9 @@ public class Movement : MonoBehaviour
         
        
 
-        animator.SetFloat("VelocityY", rb2d.velocity.y);
-        animator.SetFloat("inputX", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+        //animator.SetFloat("VelocityY", rb2d.velocity.y);
+        animator.SetFloat("movementX", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         
-       
     }
 
    
