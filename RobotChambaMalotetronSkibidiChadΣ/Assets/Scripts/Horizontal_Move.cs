@@ -65,10 +65,10 @@ public class Horizontal_Move : MonoBehaviour
             }
             // Aquí puedes manejar lo que ocurre al interactuar con un enemigo
         }
-        if(counter == 20)
+        if(counter == 5)
         {
             
-            transitionManager.Transition("LevelIntroduction");
+            transitionManager.Transition("Menu");
             
         }
     }
