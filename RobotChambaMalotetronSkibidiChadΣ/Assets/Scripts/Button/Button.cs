@@ -9,7 +9,10 @@ public class Button : MonoBehaviour
 
     // Asegúrate de que el objeto del botón tiene un Collider2D con la opción "Is Trigger" marcada
 
-    
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
