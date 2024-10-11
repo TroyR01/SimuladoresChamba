@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSampleTes.unity
     guid: 318315466b9077f4d80c65490d404541
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Presentation.unity
+    guid: 1c722c6c3b7030849bfef59c2da49bc4
   m_configObjects: {}

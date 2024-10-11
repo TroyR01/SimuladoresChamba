@@ -11,7 +11,7 @@ public class MenuController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            transitionManager.Transition("LevelIntroduction");
+            transitionManager.Transition("Presentation");
         }
     }
 }
